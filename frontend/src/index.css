@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap");
+
+@import "tailwindcss";
+
+@plugin "daisyui";
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  prefersdark: false;
+
+  /* Primary */
+  --color-primary: #4f46e5;
+  --color-primary-content: #ffffff;
+
+  /* Secondary */
+  --color-secondary: #06b6d4;
+  --color-secondary-content: #ffffff;
+
+  /* Accent */
+  --color-accent: #818cf8;
+  --color-accent-content: #ffffff;
+
+  /* Neutral */
+  --color-neutral: #0f172a;
+  --color-neutral-content: #ffffff;
+
+  /* Background */
+  --color-base-100: #f8fafc;
+  --color-base-200: #f1f5f9;
+  --color-base-300: #e2e8f0;
+  --color-base-content: #0f172a;
+
+  /* Status Colors */
+  --color-info: #0ea5e9;
+  --color-info-content: #ffffff;
+
+  --color-success: #22c55e;
+  --color-success-content: #ffffff;
+
+  --color-warning: #f59e0b;
+  --color-warning-content: #ffffff;
+
+  --color-error: #ef4444;
+  --color-error-content: #ffffff;
+
+  /* Border Radius */
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.75rem;
+
+  /* Border */
+  --border: 1px;
+
+  /* DaisyUI Effects */
+  --depth: 0;
+  --noise: 0;
+}
+
+/* Global Styles */
+
+:root {
+  font-family: "Inter", sans-serif;
+  color: #0f172a;
+  background-color: #f8fafc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  font-family: "Inter", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}

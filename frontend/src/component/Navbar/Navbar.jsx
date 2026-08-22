@@ -126,7 +126,7 @@ const Navbar = () => {
           {/* Desktop Actions */}
           <div className="hidden items-center gap-3 lg:flex">
             <Link
-              to="/login"
+              to="/auth/login"
               className="flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-base-content/70 transition-all duration-200 hover:bg-base-200 hover:text-primary"
             >
               <LogIn size={18} />
@@ -134,7 +134,7 @@ const Navbar = () => {
             </Link>
 
             <Link
-              to="/register"
+              to="/auth/register"
               className="btn btn-primary gap-2 rounded-lg px-5"
             >
               <span>Get Started</span>
@@ -207,7 +207,7 @@ const Navbar = () => {
             <div className="flex flex-col gap-2">
               
               <Link
-                to="/login"
+                to="/auth/login"
                 onClick={closeMenu}
                 className="flex min-h-12 items-center gap-3 rounded-xl px-4 text-sm font-medium text-base-content/75 transition-all duration-200 hover:bg-base-200 hover:text-primary"
               >
@@ -216,7 +216,7 @@ const Navbar = () => {
               </Link>
 
               <Link
-                to="/register"
+                to="/auth/register"
                 onClick={closeMenu}
                 className="btn btn-primary min-h-12 w-full gap-2 rounded-xl"
               >

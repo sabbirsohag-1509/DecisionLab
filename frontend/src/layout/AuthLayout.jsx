@@ -10,12 +10,10 @@ import Logo from "../pages/shared/Logo/Logo";
 
 const AuthLayout = () => {
   return (
-    <main className="min-h-screen bg-base-200">
-      <div className="mx-auto grid min-h-screen max-w-7xl lg:grid-cols-2">
-
+    <main className="min-h-screen bg-base-200 lg:h-screen lg:overflow-hidden">
+      <div className="mx-auto grid min-h-screen max-w-7xl lg:h-screen lg:grid-cols-2">
         {/* ================= LEFT SIDE ================= */}
-        <section className="relative hidden overflow-hidden bg-base-100 lg:flex lg:flex-col lg:justify-between lg:p-12 xl:p-16">
-
+        <section className="relative hidden overflow-hidden bg-base-100 lg:flex lg:h-screen lg:flex-col lg:justify-between lg:p-12 xl:p-16">
           {/* Decorative background */}
           <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
 
@@ -34,12 +32,12 @@ const AuthLayout = () => {
 
           {/* Main Content */}
           <div className="relative z-10 max-w-xl">
+            {/* Badge */}
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/15 bg-primary/5 px-4 py-2 text-sm font-medium text-primary">
-             
-
               AI-Powered Decision Intelligence
             </div>
 
+            {/* Heading */}
             <h1 className="text-4xl font-bold leading-tight tracking-tight text-base-content xl:text-5xl">
               Make better decisions
               <span className="block text-primary">
@@ -47,6 +45,7 @@ const AuthLayout = () => {
               </span>
             </h1>
 
+            {/* Description */}
             <p className="mt-6 max-w-lg text-base leading-7 text-base-content/65 xl:text-lg">
               Analyze your options, understand trade-offs, identify risks,
               and move forward with clearer, more structured insights.
@@ -54,7 +53,7 @@ const AuthLayout = () => {
 
             {/* Benefits */}
             <div className="mt-10 space-y-4">
-
+              {/* Benefit 1 */}
               <div className="flex items-center gap-4">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
                   <Sparkles size={19} aria-hidden="true" />
@@ -64,12 +63,14 @@ const AuthLayout = () => {
                   <p className="font-semibold text-base-content">
                     Structured Analysis
                   </p>
+
                   <p className="text-sm text-base-content/55">
                     Turn complex decisions into clear insights.
                   </p>
                 </div>
               </div>
 
+              {/* Benefit 2 */}
               <div className="flex items-center gap-4">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
                   <Scale size={19} aria-hidden="true" />
@@ -79,12 +80,14 @@ const AuthLayout = () => {
                   <p className="font-semibold text-base-content">
                     Compare Your Options
                   </p>
+
                   <p className="text-sm text-base-content/55">
                     Understand trade-offs before you decide.
                   </p>
                 </div>
               </div>
 
+              {/* Benefit 3 */}
               <div className="flex items-center gap-4">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
                   <ShieldCheck size={19} aria-hidden="true" />
@@ -94,12 +97,12 @@ const AuthLayout = () => {
                   <p className="font-semibold text-base-content">
                     Understand the Risks
                   </p>
+
                   <p className="text-sm text-base-content/55">
                     Identify important factors and uncertainties.
                   </p>
                 </div>
               </div>
-
             </div>
           </div>
 
@@ -113,8 +116,7 @@ const AuthLayout = () => {
         </section>
 
         {/* ================= RIGHT SIDE ================= */}
-        <section className="flex min-h-screen flex-col bg-base-200 px-5 py-6 sm:px-8 lg:justify-center lg:px-12 xl:px-16">
-
+        <section className="min-h-screen bg-base-200 px-5 py-6 sm:px-8 lg:h-screen lg:overflow-y-auto lg:px-12 xl:px-16">
           {/* Mobile Header */}
           <div className="mb-8 flex items-center justify-between lg:hidden">
             <Link
@@ -135,20 +137,18 @@ const AuthLayout = () => {
           </div>
 
           {/* Auth Content */}
-          <div className="mx-auto w-full max-w-md">
-            <div className="rounded-3xl border border-base-300 bg-base-100 p-6 shadow-sm sm:p-8">
-
+          <div className="mx-auto flex w-full max-w-md items-center py-2 lg:min-h-full">
+            {/* ONE CARD ONLY */}
+            <div className="w-full rounded-3xl border border-base-300 bg-base-100 p-6 shadow-sm sm:p-8">
               <Outlet />
-
             </div>
-
-            {/* Mobile bottom text */}
-            <p className="mt-6 text-center text-xs text-base-content/40 lg:hidden">
-              Your decisions. Your priorities. Clearer insights.
-            </p>
           </div>
-        </section>
 
+          {/* Mobile Bottom Text */}
+          <p className="mt-6 text-center text-xs text-base-content/40 lg:hidden">
+            Your decisions. Your priorities. Clearer insights.
+          </p>
+        </section>
       </div>
     </main>
   );

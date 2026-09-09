@@ -13,6 +13,7 @@ import Logo from "../../pages/shared/Logo/Logo";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const mobileMenuRef = useRef(null);
   const menuButtonRef = useRef(null);
@@ -47,11 +48,9 @@ const Navbar = () => {
     const handleOutsideClick = (event) => {
       if (!isMenuOpen) return;
 
-      const clickedInsideMenu =
-        mobileMenuRef.current?.contains(event.target);
+      const clickedInsideMenu = mobileMenuRef.current?.contains(event.target);
 
-      const clickedMenuButton =
-        menuButtonRef.current?.contains(event.target);
+      const clickedMenuButton = menuButtonRef.current?.contains(event.target);
 
       if (!clickedInsideMenu && !clickedMenuButton) {
         setIsMenuOpen(false);
@@ -88,15 +87,39 @@ const Navbar = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY >= 50);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-base-200 bg-base-100/95 shadow-sm backdrop-blur-md">
-      <nav className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+    <header
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-white/40 px-0 py-0 shadow-lg shadow-slate-200/20 backdrop-blur-xl"
+          : "bg-transparent px-3 py-3 sm:px-6 sm:py-4"
+      }`}
+    >
+      <nav
+        className={`mx-auto w-full transition-all duration-300 ${
+          isScrolled
+            ? "max-w-none"
+            : "max-w-7xl rounded-full border border-white/50 bg-white/25 px-4 shadow-lg shadow-slate-200/20 backdrop-blur-xl sm:px-6 lg:px-8"
+        }`}
+      >
         <div className="flex h-16 items-center justify-between">
-          
           {/* Logo */}
           <Logo />
 
@@ -134,10 +157,10 @@ const Navbar = () => {
             </Link>
 
             <Link
-              to="/auth/register"
+              to="/decision"
               className="btn btn-primary gap-2 rounded-lg px-5"
             >
-              <span>Get Started</span>
+              <span>Start a Decision</span>
               <ArrowRight size={18} />
             </Link>
           </div>
@@ -149,9 +172,7 @@ const Navbar = () => {
             onClick={() => setIsMenuOpen((prev) => !prev)}
             className="btn btn-ghost btn-square lg:hidden"
             aria-label={
-              isMenuOpen
-                ? "Close navigation menu"
-                : "Open navigation menu"
+              isMenuOpen ? "Close navigation menu" : "Open navigation menu"
             }
             aria-expanded={isMenuOpen}
             aria-controls="mobile-navigation"
@@ -169,13 +190,10 @@ const Navbar = () => {
           id="mobile-navigation"
           ref={mobileMenuRef}
           className={`overflow-hidden transition-all duration-300 ease-in-out lg:hidden ${
-            isMenuOpen
-              ? "max-h-[500px] opacity-100"
-              : "max-h-0 opacity-0"
+            isMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
           }`}
         >
           <div className="border-t border-base-200 py-4">
-            
             {/* Mobile Navigation Links */}
             <div className="flex flex-col gap-1">
               {navLinks.map((link) => {
@@ -205,7 +223,6 @@ const Navbar = () => {
 
             {/* Mobile Actions */}
             <div className="flex flex-col gap-2">
-              
               <Link
                 to="/auth/login"
                 onClick={closeMenu}
@@ -216,14 +233,13 @@ const Navbar = () => {
               </Link>
 
               <Link
-                to="/auth/register"
+                to="/decision"
                 onClick={closeMenu}
                 className="btn btn-primary min-h-12 w-full gap-2 rounded-xl"
               >
-                <span>Get Started</span>
+                <span>Start a Decision</span>
                 <ArrowRight size={18} />
               </Link>
-
             </div>
           </div>
         </div>

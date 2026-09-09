@@ -23,7 +23,7 @@ const WhyDecisionLab = () => {
       number: "02",
       title: "Compare Your Options",
       description:
-        "Understand the strengths, weaknesses, and trade-offs of different choices instead of looking at only one option.",
+        "See the good points, difficult parts, and what you may give up with each choice.",
       icon: GitCompare,
       preview: "comparison",
     },
@@ -47,12 +47,7 @@ const WhyDecisionLab = () => {
 
   const renderPreview = (type) => {
     if (type === "factors") {
-      const factors = [
-        "Goals",
-        "Constraints",
-        "Priorities",
-        "Context",
-      ];
+      const factors = ["Goals", "Constraints", "Priorities", "Context"];
 
       return (
         <div className="rounded-2xl border border-base-200 bg-base-200/40 p-4">
@@ -61,11 +56,7 @@ const WhyDecisionLab = () => {
               Decision factors
             </span>
 
-            <Search
-              size={14}
-              className="text-primary"
-              aria-hidden="true"
-            />
+            <Search size={14} className="text-primary" aria-hidden="true" />
           </div>
 
           <div className="flex flex-wrap gap-2">
@@ -86,37 +77,33 @@ const WhyDecisionLab = () => {
       return (
         <div className="grid grid-cols-2 gap-2">
           <div className="rounded-2xl border border-base-200 bg-base-200/40 p-3">
-            <p className="text-xs font-bold text-base-content">
-              Option A
-            </p>
+            <p className="text-xs font-bold text-base-content">Option A</p>
 
             <div className="mt-3 space-y-2">
               <div className="flex items-center gap-1.5 text-[10px] text-success">
                 <CircleCheckBig size={13} aria-hidden="true" />
-                <span>Pros</span>
+                <span>Good points</span>
               </div>
 
               <div className="flex items-center gap-1.5 text-[10px] text-error">
                 <CircleAlert size={13} aria-hidden="true" />
-                <span>Cons</span>
+                <span>Things to consider</span>
               </div>
             </div>
           </div>
 
           <div className="rounded-2xl border border-primary/15 bg-primary/5 p-3">
-            <p className="text-xs font-bold text-base-content">
-              Option B
-            </p>
+            <p className="text-xs font-bold text-base-content">Option B</p>
 
             <div className="mt-3 space-y-2">
               <div className="flex items-center gap-1.5 text-[10px] text-success">
                 <CircleCheckBig size={13} aria-hidden="true" />
-                <span>Pros</span>
+                <span>Good points</span>
               </div>
 
               <div className="flex items-center gap-1.5 text-[10px] text-error">
                 <CircleAlert size={13} aria-hidden="true" />
-                <span>Cons</span>
+                <span>Things to consider</span>
               </div>
             </div>
           </div>
@@ -166,10 +153,7 @@ const WhyDecisionLab = () => {
       <div className="rounded-2xl border border-primary/10 bg-primary/5 p-4">
         <div className="flex items-center gap-2.5">
           <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-primary-content">
-            <CircleCheckBig
-              size={17}
-              aria-hidden="true"
-            />
+            <CircleCheckBig size={17} aria-hidden="true" />
           </div>
 
           <div>
@@ -189,7 +173,7 @@ const WhyDecisionLab = () => {
           </p>
 
           <p className="text-[10px] text-base-content/60">
-            ✓ 3 key factors to consider
+            ✓ 3 things that matter most
           </p>
         </div>
       </div>
@@ -214,24 +198,25 @@ const WhyDecisionLab = () => {
         <div className="mx-auto max-w-3xl text-center">
           {/* Badge */}
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/15 bg-primary/5 px-3.5 py-2 text-xs font-semibold text-primary sm:text-sm">
-            <img src={DecisionLabLogo} alt="DecisionLab Logo" className="w-6 h-6" />
+            <img
+              src={DecisionLabLogo}
+              alt="DecisionLab Logo"
+              className="w-6 h-6"
+            />
 
             <span>Why DecisionLab?</span>
           </div>
 
           {/* Heading */}
           <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-base-content sm:text-4xl md:text-5xl">
-            Think Clearly.{" "}
-            <span className="text-primary">
-              Decide Smarter.
-            </span>
+            Think Clearly. <span className="text-primary">Decide Smarter.</span>
           </h2>
 
           {/* Description */}
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-base-content/60 sm:text-base sm:leading-8">
-            Complex decisions rarely have a simple answer. DecisionLab
-            helps you understand your options, trade-offs, risks, and
-            priorities before you decide.
+            Complex decisions rarely have a simple answer. DecisionLab helps you
+            understand your options, possible problems, and what matters most
+            before you decide.
           </p>
         </div>
 
@@ -248,11 +233,7 @@ const WhyDecisionLab = () => {
                 {/* Card Header */}
                 <div className="flex items-start justify-between">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-primary-content">
-                    <Icon
-                      size={22}
-                      strokeWidth={2}
-                      aria-hidden="true"
-                    />
+                    <Icon size={22} strokeWidth={2} aria-hidden="true" />
                   </div>
 
                   <span className="text-sm font-bold tracking-wider text-base-content/20">
@@ -271,9 +252,7 @@ const WhyDecisionLab = () => {
                 </p>
 
                 {/* Preview */}
-                <div className="mt-6">
-                  {renderPreview(benefit.preview)}
-                </div>
+                <div className="mt-6">{renderPreview(benefit.preview)}</div>
               </article>
             );
           })}

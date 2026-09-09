@@ -1,10 +1,5 @@
 import { Link, Outlet } from "react-router";
-import {
-  Scale,
-  ShieldCheck,
-  ArrowLeft,
-  Sparkles,
-} from "lucide-react";
+import { Scale, ShieldCheck, ArrowLeft, Sparkles } from "lucide-react";
 
 import Logo from "../pages/shared/Logo/Logo";
 
@@ -34,21 +29,19 @@ const AuthLayout = () => {
           <div className="relative z-10 max-w-xl">
             {/* Badge */}
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/15 bg-primary/5 px-4 py-2 text-sm font-medium text-primary">
-              AI-Powered Decision Intelligence
+              Simple help for difficult decisions
             </div>
 
             {/* Heading */}
             <h1 className="text-4xl font-bold leading-tight tracking-tight text-base-content xl:text-5xl">
               Make better decisions
-              <span className="block text-primary">
-                with confidence.
-              </span>
+              <span className="block text-primary">with confidence.</span>
             </h1>
 
             {/* Description */}
             <p className="mt-6 max-w-lg text-base leading-7 text-base-content/65 xl:text-lg">
-              Analyze your options, understand trade-offs, identify risks,
-              and move forward with clearer, more structured insights.
+              Compare your options, understand what may be difficult, spot
+              possible problems, and move forward with a clear plan.
             </p>
 
             {/* Benefits */}
@@ -61,11 +54,11 @@ const AuthLayout = () => {
 
                 <div>
                   <p className="font-semibold text-base-content">
-                    Structured Analysis
+                    Easy-to-follow breakdown
                   </p>
 
                   <p className="text-sm text-base-content/55">
-                    Turn complex decisions into clear insights.
+                    Turn difficult choices into simple information.
                   </p>
                 </div>
               </div>
@@ -82,7 +75,7 @@ const AuthLayout = () => {
                   </p>
 
                   <p className="text-sm text-base-content/55">
-                    Understand trade-offs before you decide.
+                    See what you gain and what you may give up.
                   </p>
                 </div>
               </div>
@@ -99,7 +92,7 @@ const AuthLayout = () => {
                   </p>
 
                   <p className="text-sm text-base-content/55">
-                    Identify important factors and uncertainties.
+                    Find important details and possible problems.
                   </p>
                 </div>
               </div>
@@ -109,8 +102,7 @@ const AuthLayout = () => {
           {/* Footer */}
           <div className="relative z-10">
             <p className="text-sm text-base-content/40">
-              © {new Date().getFullYear()} DecisionLab. Make informed
-              decisions.
+              © {new Date().getFullYear()} DecisionLab. Make informed decisions.
             </p>
           </div>
         </section>

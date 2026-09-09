@@ -25,7 +25,7 @@ const HowDecisionLabWorks = () => {
       number: "02",
       title: "Understand",
       description:
-        "DecisionLab identifies the important context, goals, constraints, and factors that could influence your decision.",
+        "DecisionLab finds the goals, needs, limits, and details that could affect your decision.",
       icon: Brain,
       preview: "factors",
     },
@@ -33,7 +33,7 @@ const HowDecisionLabWorks = () => {
       number: "03",
       title: "Analyze",
       description:
-        "AI compares your options, evaluates trade-offs, and identifies pros, cons, risks, and key factors.",
+        "AI compares your options and shows the good points, things to consider, possible risks, and what matters most.",
       icon: ChartNoAxesCombined,
       preview: "comparison",
     },
@@ -89,37 +89,33 @@ const HowDecisionLabWorks = () => {
       return (
         <div className="grid grid-cols-2 gap-2">
           <div className="rounded-xl border border-base-200 bg-base-200/40 p-3">
-            <p className="text-xs font-semibold text-base-content">
-              Option A
-            </p>
+            <p className="text-xs font-semibold text-base-content">Option A</p>
 
             <div className="mt-2 space-y-1.5">
               <div className="flex items-center gap-1.5 text-[10px] text-success">
                 <CheckCircle2 size={12} />
-                <span>Pros</span>
+                <span>Good points</span>
               </div>
 
               <div className="flex items-center gap-1.5 text-[10px] text-error">
                 <CircleAlert size={12} />
-                <span>Cons</span>
+                <span>Things to consider</span>
               </div>
             </div>
           </div>
 
           <div className="rounded-xl border border-primary/15 bg-primary/5 p-3">
-            <p className="text-xs font-semibold text-base-content">
-              Option B
-            </p>
+            <p className="text-xs font-semibold text-base-content">Option B</p>
 
             <div className="mt-2 space-y-1.5">
               <div className="flex items-center gap-1.5 text-[10px] text-success">
                 <CheckCircle2 size={12} />
-                <span>Pros</span>
+                <span>Good points</span>
               </div>
 
               <div className="flex items-center gap-1.5 text-[10px] text-error">
                 <CircleAlert size={12} />
-                <span>Cons</span>
+                <span>Things to consider</span>
               </div>
             </div>
           </div>
@@ -147,7 +143,7 @@ const HowDecisionLabWorks = () => {
 
         <div className="mt-3 space-y-1.5 text-[10px] text-base-content/60">
           <p>✓ Best fit for your current goals</p>
-          <p>✓ Key factors to consider</p>
+          <p>✓ What matters most</p>
         </div>
       </div>
     );
@@ -171,7 +167,11 @@ const HowDecisionLabWorks = () => {
         <div className="mx-auto max-w-3xl text-center">
           {/* Badge */}
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/15 bg-primary/5 px-3.5 py-2 text-xs font-semibold text-primary sm:text-sm">
-            <img src={DecisionLabLogo} alt="DecisionLab Logo" className="w-6 h-6" />
+            <img
+              src={DecisionLabLogo}
+              alt="DecisionLab Logo"
+              className="w-6 h-6"
+            />
             <span>How DecisionLab Works</span>
           </div>
 
@@ -183,8 +183,8 @@ const HowDecisionLabWorks = () => {
 
           {/* Description */}
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-base-content/60 sm:text-base sm:leading-8">
-            DecisionLab turns complex questions into structured insights so
-            you can understand your options and move forward with confidence.
+            DecisionLab turns complex questions into structured insights so you
+            can understand your options and move forward with confidence.
           </p>
         </div>
 
@@ -195,10 +195,7 @@ const HowDecisionLabWorks = () => {
               const Icon = step.icon;
 
               return (
-                <div
-                  key={step.number}
-                  className="relative flex flex-col"
-                >
+                <div key={step.number} className="relative flex flex-col">
                   {/* Desktop Connector */}
                   {index < steps.length - 1 && (
                     <div
@@ -219,11 +216,7 @@ const HowDecisionLabWorks = () => {
                     <div className="flex items-start justify-between">
                       {/* Icon */}
                       <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-content">
-                        <Icon
-                          size={22}
-                          strokeWidth={2}
-                          aria-hidden="true"
-                        />
+                        <Icon size={22} strokeWidth={2} aria-hidden="true" />
                       </div>
 
                       {/* Number */}
@@ -286,11 +279,7 @@ const HowDecisionLabWorks = () => {
           />
 
           <div className="flex items-center gap-2 rounded-full border border-primary/10 bg-primary/5 px-4 py-2.5">
-            <Scale
-              size={16}
-              className="text-primary"
-              aria-hidden="true"
-            />
+            <Scale size={16} className="text-primary" aria-hidden="true" />
 
             <span className="text-xs font-medium text-primary sm:text-sm">
               DecisionLab brings clarity
